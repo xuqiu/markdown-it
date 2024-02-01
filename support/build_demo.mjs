@@ -17,10 +17,11 @@ shell.mkdir('demo')
 
 shell.cp('support/demo_template/README.md', 'demo/')
 shell.cp('support/demo_template/index.css', 'demo/')
+shell.cp('support/demo_template/runCode.js', 'demo/')
 
 // Read html template and inject escaped sample
 const html = readFileSync('support/demo_template/index.html', 'utf8')
-const sample = readFileSync('support/demo_template/sample.md', 'utf8')
+const sample = readFileSync('support/demo_template/runcodeSample.md', 'utf8')
 
 const output = html.replace('<!--SAMPLE-->', escape(sample))
 writeFileSync('demo/index.html', output)
